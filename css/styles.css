@@ -860,7 +860,7 @@ a {
   .post {
     display: flex;
     flex-direction: column;
-    margin-bottom: 62px;
+    margin-bottom: 34px;
   }
 
   .post-description {
