@@ -1,7 +1,7 @@
 @font-face {
   font-family: "OpenSans";
   src: local("OpenSans"),
-    url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff)
+    url(../fonts/OpenSans-Regular.woff)
       format("woff");
   font-weight: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: "OpenSans";
-  src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff")
+  src: url("../fonts/OpenSans-Bold.woff")
     format("woff");
   font-weight: 700;
   font-style: bold;
@@ -345,8 +345,8 @@ a {
 .email {
   box-sizing: border-box;
   height: 48px;
- max-width: 270px;
- width:100%;
+  max-width: 270px;
+  width: 100%;
   border: none;
   background-color: #f4f7f6;
   padding-left: 18px;
@@ -356,7 +356,7 @@ a {
   margin-top: 14px;
   height: 48px;
   max-width: 270px;
-  width:100%;
+  width: 100%;
   background-color: #b59f5b;
   border: none;
   text-transform: uppercase;
@@ -459,7 +459,7 @@ a {
   flex-direction: column;
   border: solid 3px #b59f5b;
   max-width: 400px;
-  width:100%;
+  width: 100%;
   padding: 55px 20px 25px 20px;
   height: 100%;
   justify-content: start;
@@ -538,15 +538,15 @@ a {
 }
 
 .social-dribble {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg);
+  background-image: url(../svg/001-dribbble.svg);
 }
 
 .social-pinterest {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg);
+  background-image: url(../svg/002-pinterest.svg);
 }
 
 .social-tumblr {
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
+  background-image: url(../svg/003-tumblr.svg);
 }
 
 .copyright {
@@ -575,7 +575,7 @@ a {
   opacity: 0.4;
   margin: 10px auto 24px;
 }
- 
+
 .popup {
   width: 100%;
   min-height: 100%;
@@ -804,9 +804,11 @@ a {
     font-size: 26px;
     line-height: 36px;
     max-width: 320px;
-    width:100%;
-    padding: 0;
+    width: 100%;
     margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .site-content {
@@ -821,18 +823,34 @@ a {
     max-width: 640px;
     display: flex;
     flex-wrap: wrap;
+    gap: 3px;
     min-width: 320px;
     height: auto;
   }
 
+  .trends-title {
+    font-size: 16px;
+  }
+
+  .post-tag {
+    font-size: 14px;
+  }
+
   .section-title {
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin-top: 45px;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  .sidebar-title {
+    margin-top: 45px;
+    margin-bottom: 40px;
+    font-size: 16px;
   }
 
   .trends-post {
-    height: 230px;
     width: 100%;
+    padding: 90px 15px 15px 15px;
   }
 
   .wrp {
@@ -845,19 +863,56 @@ a {
     margin-bottom: 62px;
   }
 
+  .post-description {
+    padding-top: 35px;
+    margin: auto;
+    padding-bottom: 28px;
+    border-bottom: solid 4px #eeeeee;
+  }
+
+  .post:last-of-type .post-description {
+    border-bottom: none;
+  }
+
+  .post-title {
+    font-size: 16px;
+  }
+
+  .lastest-post-title {
+    display: block;
+  }
+
+  .sidebar,
+  .lastest-posts,
+  .search,
+  .subscribe,
+  .taglist,
+  .topics {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .search-text,
+  .email,
+  .subscribe-button {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .topic-item {
+    padding-bottom: 15px;
+  }
+
   .shop-gallery {
     display: flex;
     flex-direction: column;
-    margin: 15px;
+    margin: 0 15px;
     align-items: center;
-
+    gap: 0;
   }
 
   .shop-item {
     width: 100%;
-  }
-
-  .post-description {
-    margin: auto;
+    
   }
 }
