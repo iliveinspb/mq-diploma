@@ -27,6 +27,10 @@ a {
   color: inherit;
 }
 
+._hidden {
+  display: none;
+}
+
 .container {
   max-width: 1200px;
   width: 100%;
@@ -70,11 +74,16 @@ a {
   align-items: center;
 }
 
-.menu {
+.menu-list {
   display: flex;
   font-size: 13px;
   font-weight: normal;
   text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.menu-button {
+  display: none;
 }
 
 .list-item:nth-of-type(n + 2) {
@@ -88,6 +97,52 @@ a {
 
 .list-item:hover {
   text-decoration: underline;
+}
+
+.menu-button {
+  width: 1.4em;
+  height: 1em;  
+  border: none;
+  padding: 0;
+
+  background-color: transparent;
+  font-size: 25px;
+  position: relative;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.menu-button:before, .menu-button:after {
+  content:"";
+  width: 100%;
+  height: 20%;
+
+  border-radius: 5px;
+  background-color: #ffffff;  
+
+  position: absolute;
+  left: 0;
+}
+
+.menu-button:before {
+  top: 0;
+}
+
+.menu-button:after {
+  bottom: 0;
+}
+
+.menu-button-label {
+  width: 100%;
+  height: 20%;
+  margin-top: -0.1em;  
+
+  border-radius: 5px;
+  background-color: #ffffff;  
+
+  position: absolute;
+  left: 0;
+  top: 50%;
 }
 
 .title {
@@ -106,13 +161,12 @@ a {
   gap: 5px;
   flex-wrap: nowrap;
   width: 100%;
-  height: 320px;
+  min-height: 320px;
 }
 
 .trends-post {
   width: 25%;
-
-  padding: 0 20px 20px 20px;
+  padding: 20px;
   background-color: #002333;
   background-repeat: no-repeat;
   background-position: center center;
@@ -482,7 +536,7 @@ a {
 
 /*футер карточки магазина*/
 
-.product-footer {
+.product-checkout {
   margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
@@ -580,7 +634,6 @@ a {
   overflow: hidden;
   position: fixed;
   top: 0px;
-  display: none;
   z-index: 4;
   align-items: center;
   justify-content: center;
@@ -786,7 +839,7 @@ a {
     align-items: center;
   }
 
-  .menu {
+  .menu-list {
     display: none;
   }
 
@@ -833,6 +886,11 @@ a {
     font-size: 16px;
   }
 
+  .trends-post {
+    width: 100%;
+    padding: 90px 15px 15px 15px;
+  }
+
   .post-tag {
     font-size: 14px;
   }
@@ -847,11 +905,6 @@ a {
     margin-top: 45px;
     margin-bottom: 40px;
     font-size: 16px;
-  }
-
-  .trends-post {
-    width: 100%;
-    padding: 90px 15px 15px 15px;
   }
 
   .wrp {
@@ -900,11 +953,7 @@ a {
   .search,
   .subscribe,
   .taglist,
-  .topics {
-    width: 100%;
-    max-width: 640px;
-  }
-
+  .topics,
   .search-text,
   .email,
   .subscribe-button,
@@ -941,4 +990,123 @@ a {
     max-width: 390px;
     max-height: calc(1vh-80px);
   }
+}
+
+@media (min-width: 641px) and (max-width: 1200px) {
+  .logo {
+  width: 160px;
+  padding: 0;
+}
+
+.top-nav {
+    padding: 0 35px;
+  }
+
+  .menu-button{
+    display: none;
+  }
+
+  .title {
+  font-size: 40px;
+  line-height: 1.6;
+  padding-bottom: 120px;
+}
+
+  .site-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrp {
+    display: flex;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 65px;
+  padding: 0 35px;
+  justify-content: space-between;
+  }
+
+  .trends {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .main {
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 36px;
+  }
+
+
+  .trends-gallery {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    height: auto;
+  }
+  .trends-post {
+    width: calc(50% - 2px);
+    padding: 90px 15px 15px 15px;
+  }
+
+    .post {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 34px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+   .post-picture {
+    width: 100%;
+    max-width: 1200px;
+    object-fit: cover;
+    margin: auto;
+  }
+  .post-description {
+    padding-top: 35px;
+    margin: auto;
+    padding-bottom: 28px;
+    border-bottom: solid 4px #eeeeee;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+   .post:last-of-type .post-description {
+    border-bottom: none;
+  }
+
+    .shop-gallery {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 35px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 10px;
+    height: auto;
+  }
+
+  .shop-item {
+    width: 45%;
+  }
+
+  .shop-item-image {
+    aspect-ratio: 4 / 3;
+    width: calc(100% - 40px);
+    object-fit: cover;
+  }
+
+  .shop-item-description {
+    max-width: 1200px;
+
+  }
+
+
 }
