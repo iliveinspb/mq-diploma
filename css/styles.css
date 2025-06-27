@@ -9,7 +9,7 @@
   font-family: "OpenSans";
   src: url("../fonts/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -422,7 +422,7 @@ a {
   margin: -1px;
   padding: 0;
   border: 0;
-  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
   overflow: hidden;
 }
 
@@ -517,8 +517,7 @@ a {
 }
 
 .shop-item-image {
-  /*height: 262px;*/
-  width: calc(100%-10px);
+  width: calc(100% - 10px);
   background-color: #000000;
   background-size: cover;
   position: relative;
@@ -533,8 +532,6 @@ a {
 .link:hover {
   text-decoration: underline;
 }
-
-/*футер карточки магазина*/
 
 .product-checkout {
   margin-top: 28px;
@@ -988,7 +985,19 @@ a {
   .popup-content {
     width: 100%;
     max-width: 390px;
-    max-height: calc(1vh-80px);
+    max-height: calc(1vh - 80px);
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .trends-post {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+  .trends-post {
+    width: calc(50% - 2px);
   }
 }
 
@@ -1108,5 +1117,24 @@ a {
 
   }
 
+
+}
+
+
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: portrait) {
+  .trends-post {
+    width: calc(50% - 2px);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+  .trends-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  .trends-post {
+    width: 25%;
+  }
 
 }
