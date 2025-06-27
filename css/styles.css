@@ -785,8 +785,8 @@ a {
   height: 2em;
   font-size: 20px;
   position: absolute;
-  top: -1.6em;
-  right: -1.6em;
+  top: -1.8em;
+  right: -0.5em;
   background-color: transparent;
   border: none;
   padding: 0;
@@ -983,9 +983,12 @@ a {
   }
 
   .popup-content {
-    width: 100%;
-    max-width: 390px;
-    max-height: calc(1vh - 80px);
+    min-width: 320px;
+    height: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
   }
 }
 
@@ -1135,6 +1138,14 @@ a {
   
   .trends-post {
     width: 25%;
+  }
+
+    .popup-content {
+    height: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
   }
 
 }
